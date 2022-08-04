@@ -126,7 +126,7 @@ using Domain.Interfaces;
 
         if (int.TryParse(this.CategoryId, out int iCategoryId))
         {
-            var cat  = getCategoryByIdUseCase.Execute(iCategoryId);
+            var cat  = _getCategoryByIdDomain.Execute(iCategoryId);
             this._category = new Category {CategoryId = cat.CategoryId , Name = cat.Name , Desc = cat.Desc };
         }
     }
@@ -147,7 +147,7 @@ using Domain.Interfaces;
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IEditCategoryDomain editCategoryDomain { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IGetCategoryByIdUseCase getCategoryByIdUseCase { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IGetCategoryByIdDomain _getCategoryByIdDomain { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager Manager { get; set; }
     }
 }

@@ -10,5 +10,6 @@ namespace Domain.Interfaces
         void UpdateCategory(Category category);
 
         Category GetCategoryById(int categoryId);
+        void RemoveCategory(int categoryId);
     }
 }

@@ -12,7 +12,6 @@ namespace DataAccess.InMemory
 
         public CategoryInMemoRepo()
         {
-            // Add some default categories
             categories = new List<Category>()
             {
                 new Category() {CategoryId = 1, Name = "Beverage", Desc = "Beverage"},
@@ -29,8 +28,12 @@ namespace DataAccess.InMemory
         public void AddCategory(Category category)
         {
             if (categories.Any(x => x.Name.Equals(category.Name, StringComparison.OrdinalIgnoreCase))) return;
-            var maxId = categories.Max(x => x.CategoryId);
-            category.CategoryId = maxId + 1;
+            if (categories != null && categories.Count > 0)
+            {
+                var maxId = categories.Max(x => x.CategoryId);
+                category.CategoryId = maxId + 1;
+            }
+            else category.CategoryId = 1;
 
             categories.Add(category);
         }
@@ -48,6 +51,11 @@ namespace DataAccess.InMemory
         public Category GetCategoryById(int categoryId)
         {
             return categories?.FirstOrDefault(x => x.CategoryId == categoryId);
+        }
+
+        public void RemoveCategory(int categoryId)
+        {
+            categories?.Remove(GetCategoryById(categoryId));
         }
     }
 }

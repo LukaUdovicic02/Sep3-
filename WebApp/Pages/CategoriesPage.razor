@@ -6,6 +6,7 @@
 @page "/Categories"
 @inject IViewCategoriesDomain ViewCategoriesDomain
 @inject NavigationManager navManager
+@inject IDeleteCategoryDomain DeleteCategoryDomain
 
 @if (categories != null)
 {
@@ -22,8 +23,11 @@
                      <tr>
                          <td>@category.Name</td>
                          <td>@category.Desc</td>
-                         <td><button type="button" @onclick="@(() => EditCategory(category))">Edit</button>
-                             </td>
+                         <td>
+                             <button type="button" @onclick="@(() => EditCategory(category))" class="btn btn-link">Edit</button>
+                             <button type="button" @onclick="@(() => DeleteCategory(category.CategoryId))" class="btn btn-link">Remove</button>
+                         </td>
+                         
                      </tr>
                  }
             </tbody>
@@ -39,7 +43,7 @@
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        categories = ViewCategoriesDomain.Execute()?.ToList();
+        LoadCat();
     }
 
     private void OnClickAddCategory()
@@ -51,6 +55,17 @@
     private void EditCategory(Category category)
     {
         navManager.NavigateTo($"/EditCategory/{category.CategoryId}");
-    }   
+    }
+
+    private void DeleteCategory(int categoryId)
+    {
+        DeleteCategoryDomain.Delete(categoryId);
+        LoadCat();
+    }
+
+    private void LoadCat()
+    {
+        categories = ViewCategoriesDomain.Execute()?.ToList();
+    }
 
 }

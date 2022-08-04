@@ -34,10 +34,10 @@ namespace WebApp
             services.AddSingleton<WeatherForecastService>();
 
 
-            // for data storage 
+            //  data storage dependency injection
             services.AddScoped<ICategoryRepo, CategoryInMemoRepo>();
             
-            // for domain and repos
+            //  domain and repos dependency injection
             services.AddTransient<IViewCategoriesDomain, ViewCategoriesDomain>();
             
             services.AddTransient<IAddCategoryDomain, AddCategoryDomain>();
@@ -45,6 +45,8 @@ namespace WebApp
             services.AddTransient<IEditCategoryDomain , EditCategoryDomain>();
 
             services.AddTransient<IGetCategoryByIdDomain, GetCategoryByIdDomain>();
+
+            services.AddTransient<IDeleteCategoryDomain, DeleteCategoryDomain>();
 
         }
 

@@ -119,7 +119,7 @@ using Domain.Interfaces;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 35 "C:\Users\lukau\Desktop\Supermarket Menagment System\WebApp\Pages\CategoriesPage.razor"
+#line 39 "C:\Users\lukau\Desktop\Supermarket Menagment System\WebApp\Pages\CategoriesPage.razor"
        
 
     private IList<Category> categories;
@@ -127,7 +127,7 @@ using Domain.Interfaces;
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        categories = ViewCategoriesDomain.Execute()?.ToList();
+        LoadCat();
     }
 
     private void OnClickAddCategory()
@@ -139,12 +139,24 @@ using Domain.Interfaces;
     private void EditCategory(Category category)
     {
         navManager.NavigateTo($"/EditCategory/{category.CategoryId}");
-    }   
+    }
+
+    private void DeleteCategory(int categoryId)
+    {
+        DeleteCategoryDomain.Delete(categoryId);
+        LoadCat();
+    }
+
+    private void LoadCat()
+    {
+        categories = ViewCategoriesDomain.Execute()?.ToList();
+    }
 
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IDeleteCategoryDomain DeleteCategoryDomain { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager navManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IViewCategoriesDomain ViewCategoriesDomain { get; set; }
     }
