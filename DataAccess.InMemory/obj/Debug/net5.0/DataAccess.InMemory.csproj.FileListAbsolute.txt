@@ -1,0 +1,17 @@
+C:\Users\lukau\Desktop\Supermarket Menagment System\DataAccess.InMemory\bin\Debug\net5.0\DataAccess.InMemory.deps.json
+C:\Users\lukau\Desktop\Supermarket Menagment System\DataAccess.InMemory\bin\Debug\net5.0\DataAccess.InMemory.dll
+C:\Users\lukau\Desktop\Supermarket Menagment System\DataAccess.InMemory\bin\Debug\net5.0\ref\DataAccess.InMemory.dll
+C:\Users\lukau\Desktop\Supermarket Menagment System\DataAccess.InMemory\bin\Debug\net5.0\DataAccess.InMemory.pdb
+C:\Users\lukau\Desktop\Supermarket Menagment System\DataAccess.InMemory\bin\Debug\net5.0\Domain.dll
+C:\Users\lukau\Desktop\Supermarket Menagment System\DataAccess.InMemory\bin\Debug\net5.0\Entity.dll
+C:\Users\lukau\Desktop\Supermarket Menagment System\DataAccess.InMemory\bin\Debug\net5.0\Domain.pdb
+C:\Users\lukau\Desktop\Supermarket Menagment System\DataAccess.InMemory\bin\Debug\net5.0\Entity.pdb
+C:\Users\lukau\Desktop\Supermarket Menagment System\DataAccess.InMemory\obj\Debug\net5.0\DataAccess.InMemory.csproj.AssemblyReference.cache
+C:\Users\lukau\Desktop\Supermarket Menagment System\DataAccess.InMemory\obj\Debug\net5.0\DataAccess.InMemory.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lukau\Desktop\Supermarket Menagment System\DataAccess.InMemory\obj\Debug\net5.0\DataAccess.InMemory.AssemblyInfoInputs.cache
+C:\Users\lukau\Desktop\Supermarket Menagment System\DataAccess.InMemory\obj\Debug\net5.0\DataAccess.InMemory.AssemblyInfo.cs
+C:\Users\lukau\Desktop\Supermarket Menagment System\DataAccess.InMemory\obj\Debug\net5.0\DataAccess.InMemory.csproj.CoreCompileInputs.cache
+C:\Users\lukau\Desktop\Supermarket Menagment System\DataAccess.InMemory\obj\Debug\net5.0\DataAccess.InMemory.csproj.CopyComplete
+C:\Users\lukau\Desktop\Supermarket Menagment System\DataAccess.InMemory\obj\Debug\net5.0\DataAccess.InMemory.dll
+C:\Users\lukau\Desktop\Supermarket Menagment System\DataAccess.InMemory\obj\Debug\net5.0\ref\DataAccess.InMemory.dll
+C:\Users\lukau\Desktop\Supermarket Menagment System\DataAccess.InMemory\obj\Debug\net5.0\DataAccess.InMemory.pdb
