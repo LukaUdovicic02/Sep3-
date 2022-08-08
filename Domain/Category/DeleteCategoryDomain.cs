@@ -1,5 +1,4 @@
 ﻿using Domain.Interfaces;
-using Entity;
 
 namespace Domain
 {

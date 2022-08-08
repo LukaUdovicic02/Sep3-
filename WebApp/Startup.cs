@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 using DataAccess.InMemory;
 using Domain;
 using Domain.Interfaces;
+using Domain.Products;
+using Domain.Products.Interfaces;
+using Entity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
@@ -36,17 +39,19 @@ namespace WebApp
 
             //  data storage dependency injection
             services.AddScoped<ICategoryRepo, CategoryInMemoRepo>();
+            services.AddScoped<IProductRepo, ProductInMemoRepo>();
             
             //  domain and repos dependency injection
             services.AddTransient<IViewCategoriesDomain, ViewCategoriesDomain>();
-            
             services.AddTransient<IAddCategoryDomain, AddCategoryDomain>();
-            
             services.AddTransient<IEditCategoryDomain , EditCategoryDomain>();
-
             services.AddTransient<IGetCategoryByIdDomain, GetCategoryByIdDomain>();
-
             services.AddTransient<IDeleteCategoryDomain, DeleteCategoryDomain>();
+            services.AddTransient<IViewProductDomain, ViewProductDomain>();
+            services.AddTransient<IAddProductsDomain, AddProductsesDomain>();
+            services.AddTransient<IEditCategoryDomain, EditCategoryDomain>();
+            services.AddTransient<IGetProductByIdDomain, GetProductByIdDomain>();
+            services.AddTransient<IDeleteProductDomain, DeleteProductDomain>();
 
         }
 

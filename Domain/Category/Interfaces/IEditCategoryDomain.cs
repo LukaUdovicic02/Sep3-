@@ -4,6 +4,6 @@ namespace Domain.Interfaces
 {
     public interface IEditCategoryDomain
     {
-        void Execute(Category category);
+        void Execute(Entity.Category category);
     }
 }

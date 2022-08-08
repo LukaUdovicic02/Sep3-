@@ -90,12 +90,12 @@ using WebApp.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 33 "C:\Users\lukau\Desktop\Supermarket Menagment System\WebApp\Shared\NavMenu.razor"
+#line 38 "C:\Users\lukau\Desktop\Supermarket Menagment System\WebApp\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-  
+
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;

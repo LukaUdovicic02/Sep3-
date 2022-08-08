@@ -5,6 +5,6 @@ namespace Domain.Interfaces
 {
     public interface IViewCategoriesDomain
     {
-        IEnumerable<Category> Execute();
+        IEnumerable<Entity.Category> Execute();
     }
 }

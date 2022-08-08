@@ -7,7 +7,7 @@ namespace Domain
     {
         private ICategoryRepo CategoryRepo;
         
-        public void Execute(Category category)
+        public void Execute(Entity.Category category)
         {
             CategoryRepo.AddCategory(category);
         }

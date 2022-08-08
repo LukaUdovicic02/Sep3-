@@ -68,3 +68,9 @@ C:\Users\lukau\Desktop\Supermarket Menagment System\WebApp\obj\Debug\net5.0\Razo
 C:\Users\lukau\Desktop\Supermarket Menagment System\WebApp\obj\Debug\net5.0\Razor\Pages\CategoriesPage.razor.g.cs
 C:\Users\lukau\Desktop\Supermarket Menagment System\WebApp\obj\Debug\net5.0\RazorDeclaration\Pages\EditCategoryPage.razor.g.cs
 C:\Users\lukau\Desktop\Supermarket Menagment System\WebApp\obj\Debug\net5.0\Razor\Pages\EditCategoryPage.razor.g.cs
+C:\Users\lukau\Desktop\Supermarket Menagment System\WebApp\obj\Debug\net5.0\RazorDeclaration\Pages\ProductsPage.razor.g.cs
+C:\Users\lukau\Desktop\Supermarket Menagment System\WebApp\obj\Debug\net5.0\Razor\Pages\ProductsPage.razor.g.cs
+C:\Users\lukau\Desktop\Supermarket Menagment System\WebApp\obj\Debug\net5.0\RazorDeclaration\Pages\AddProductPage.razor.g.cs
+C:\Users\lukau\Desktop\Supermarket Menagment System\WebApp\obj\Debug\net5.0\Razor\Pages\AddProductPage.razor.g.cs
+C:\Users\lukau\Desktop\Supermarket Menagment System\WebApp\obj\Debug\net5.0\RazorDeclaration\Pages\EditProductPage.razor.g.cs
+C:\Users\lukau\Desktop\Supermarket Menagment System\WebApp\obj\Debug\net5.0\Razor\Pages\EditProductPage.razor.g.cs

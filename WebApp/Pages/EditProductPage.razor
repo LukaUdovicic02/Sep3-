@@ -1,0 +1,96 @@
+﻿@page "/EditProduct/{productId}"
+@using Microsoft.AspNetCore.Components
+@using Entity
+@using Domain.Interfaces
+@using Domain.Products.Interfaces
+@using Domain
+@using Domain.Category.Interfaces
+<h3>Edit Product</h3>
+
+@inject IViewProductDomain ProductDomain
+@inject IGetProductByIdDomain productByIdDomain
+@inject NavigationManager NavigationManager
+@inject IViewCategoriesDomain ViewCategoriesDomain
+@inject IEditProductDomain EditProductDomain
+
+@if (_product != null)
+{
+    <EditForm Model="_product" class="form-inline" OnValidSubmit="OnValidSubmit">
+        <DataAnnotationsValidator></DataAnnotationsValidator>
+        <ValidationSummary></ValidationSummary>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <InputText id="name" @bind-Value="_product.Name" class="form-control"></InputText>
+        </div>
+
+        <div class="form-group">
+            <label for="Category">Category</label>
+            <select id="Category" @bind="@_product.CategoryId">
+                @foreach (var cate in _categories)
+                {
+                    <option value="@cate.CategoryId">@cate.Name</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price</label>
+            <InputNumber id="price" @bind-Value="_product.Price" class="form-control"></InputNumber>
+        </div>
+
+
+        <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <InputNumber id="quantity" @bind-Value="_product.Quantity" class="form-control"></InputNumber>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Add</button>
+        <br/>
+        <button type="button" class="btn btn-primary" @onclick="OnCancel">Cancel</button>
+    </EditForm>
+}
+
+@code {
+
+    [Parameter]
+    public string ProductId { get; set; }
+
+    private IEnumerable<Category> _categories;
+    private Product _product;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        _categories = ViewCategoriesDomain.Execute();
+    }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+
+        if (int.TryParse(this.ProductId, out int iProdId))
+        {
+            var pro = productByIdDomain.Execute(iProdId);
+            this._product = new Product {ProductId = pro.ProductId, 
+                CategoryId = pro.CategoryId , 
+                Name = pro.Name, 
+                Price = pro.Price, 
+                Quantity = pro.Quantity};
+        }
+    }
+
+    private void OnValidSubmit()
+    {
+        EditProductDomain.Execute(_product);
+        NavigationManager.NavigateTo("/Products");
+    }
+
+    private void OnCancel()
+    {
+        NavigationManager.NavigateTo("/Products");
+    }
+
+}

@@ -1,0 +1,75 @@
+﻿@page "/AddProduct"
+@using Domain.Products.Interfaces
+@using Entity
+@using Microsoft.AspNetCore.Components
+@using Domain.Interfaces
+<h3>Add Product</h3>
+
+@inject IAddProductsDomain addProductsDomain
+@inject IViewCategoriesDomain ViewCategoriesDomain
+@inject NavigationManager Manager
+
+
+@if (product != null)
+{
+    <EditForm Model="product" class="form-inline" OnValidSubmit="OnValidSubmit">
+        <DataAnnotationsValidator></DataAnnotationsValidator>
+        <ValidationSummary></ValidationSummary>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <InputText id="name" @bind-Value="product.Name" class="form-control"></InputText>
+        </div>
+
+        <div class="form-group">
+            <label for="Category">Category</label>
+            <select id="Category" @bind="@product.CategoryId">
+                @foreach (var cate in _categories)
+                {
+                    <option value="@cate.CategoryId">@cate.Name</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price</label>
+            <InputNumber id="price" @bind-Value="product.Price" class="form-control"></InputNumber>
+        </div>
+
+
+        <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <InputNumber id="quantity" @bind-Value="product.Quantity" class="form-control"></InputNumber>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Add</button>
+        <button type="button" class="btn btn-primary" @onclick="OnCancel">Cancel</button>
+    </EditForm>
+}
+
+@code {
+
+    private Product product;
+    private IEnumerable<Category> _categories;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        product = new Product();
+        _categories = ViewCategoriesDomain.Execute();
+    }
+
+    private void OnValidSubmit()
+    {
+        addProductsDomain.Run(product);
+        Manager.NavigateTo("/Products");
+    }
+
+    private void OnCancel()
+    {
+        Manager.NavigateTo("/Products");
+    }
+
+}

@@ -4,6 +4,6 @@ namespace Domain.Interfaces
 {
     public interface IGetCategoryByIdDomain
     {
-        Category Execute(int categoryId);
+        Entity.Category Execute(int categoryId);
     }
 }

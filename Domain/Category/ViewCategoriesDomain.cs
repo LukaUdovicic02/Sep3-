@@ -12,7 +12,7 @@ namespace Domain
         {
            _categoryRepo = categoryRepo;
         }
-        public IEnumerable<Category> Execute()
+        public IEnumerable<Entity.Category> Execute()
         {
             return _categoryRepo.GetCategories();
         }

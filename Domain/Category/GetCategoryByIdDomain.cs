@@ -7,7 +7,7 @@ namespace Domain
     {
         private readonly ICategoryRepo _categoryRepo;
 
-        public Category Execute(int categoryId)
+        public Entity.Category Execute(int categoryId)
         {
            return _categoryRepo.GetCategoryById(categoryId);
         }
